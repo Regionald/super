@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+{% block content %}
+<body>
+
+    <hr>
+
+    <br>
+    <div class="invoices">
+
+        
+          
+
+        <div class="invoice" id="{{client.id}}">
+            <hr>
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>client</th>
+                        <th>Invoce Id</th>
+                        <th>Tax @ 15%</th>
+                        <th>sub Total</th>
+                        <th>Total</th>
+                    </tr>
+                    {% for client in client %}
+                    <tr>
+                        <td>{{client.clientName}}</th>
+                        <td>inv-{{client.id}}</th>
+                        <td>{{client.vat}}</th>
+                        <td>R{{client.subTotal}}</th>
+                        <td>R{{client.Total}}</th>
+                    </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td></th>
+                        <td>Total</th>
+                        <td>R{{tax}}</th>
+                        <td>R{{subTotal.subTotal__sum}}</th>
+                        <td>R{{total.Total__sum}}</th>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            
+        </div>
+    </div>
+    <hr>
+
+    <div class="foot">
+
+
+        <h3>The smart Invoice</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+                href="#">Contact us</a>|<a href="#">About us</a></h6>
+        <h6>© 2022 TR-Invoice. All rights reserved. Version: 1.0.0</h6>
+        <br>
+
+    </div>
+   
+</body>
+ {% endblock %}

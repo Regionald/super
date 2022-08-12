@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>{% block title %}Business Case {% endblock %}</title>
+</head>
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+  <a href="/btamplate/" class="navbar-brand">
+      <h1 class="m-0 text-primary"><img height="10px" src="{% static 'images/logo.png' %}" alt="" class="navbar-brand"/></h1>
+  </a>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav mx-auto">
+          <a href="/btamplate/" class="nav-item nav-link active"> Home</a>
+          <a href="/btamplate/" class="nav-item nav-link"> About Us</a>
+          <a href="/btamplate/contact/" class="nav-item nav-link"> Contact Us</a>
+          </div>
+      </div>
+      <!-- <a href="/btamplate/signup/" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Register<i class="fa fa-arrow-right ms-3"></i></a> -->
+  </div>
+</nav>
+
+<body>
+  <div class="responsive">
+<div class="message bg-white">
+  {% if message_name %}
+    <center>
+      <h2>Thanks {{ message_name }}!</h2>
+      <p>We received your email and will respond shortly...</p>
+    </center>
+    <br/><br/><br/>
+  {% else %}
+  {% endif %}
+  </div>
+{%block body%}
+  <section class="contact-area">
+
+        <div class="col-12 col-md-0">
+          <div class="contact-form">
+            <div class="section-heading">
+              <h2>Contact Us For More Information</h2>
+              <div class="line"></div>
+            </div>
+            <form action="" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <input type="text" name="message-name" class="form-control mb-5" placeholder="Your Name">
+                </div>
+                <div class="col-lg-6">
+                  <input type="email" name="message-email" class="form-control mb-5" placeholder="Your Email">
+                </div>
+                <div class="col-12">
+                  <textarea name="message" class="form-control mb-5" placeholder="Your Message"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn dento-btn">Send Message</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
+</section>
+<footer class="footer-copy">
+  <div class="container-fluid">
+     <div class="row">
+ <div class="col-md-12">
+ <p> &copy; 2022 All rights reserved. @Solutions</a></p>
+  </div>
+</div>
+  </div>
+  </footer>
+</div>
+</body>
+</html>

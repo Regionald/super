@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Medical{% endblock%}</title>
+    <style>
+             
+             body{
+
+max-width: 100%;
+margin: auto;
+text-align: center;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+  color: #000000;
+  margin: 0.75%;
+}
+.navigator{
+    background-color:#00b4d8;
+    display: flex;
+}
+.btn {
+    font: inherit;
+    width: 23%;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #00b4d8;
+    color: white;
+    border: 1px solid #00b4d8;
+    padding:1.15%;
+  }
+  .btn:hover {
+    background-color: silver;
+    border-color: #00b4d8;
+  }
+  input{
+    width: 95%;
+    padding: 2%;
+    margin: 1%;
+    }
+    input:focus{
+        background-color:lightblue;
+    
+    }
+    
+
+hr{
+    background-color: red;
+  }
+  .card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  table{
+    width: 100%;
+    table-layout:fixed;
+  }
+  th{
+    background-color: #17c3b2;
+  }
+  .input{
+    margin-bottom: 0.2em;
+  }
+  .hide{
+    display: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 0.2px;
+    margin:0.25%;
+  }
+  .foot{
+    display: none;
+  }
+  
+  @media (min-width:720px){
+    body{
+      width: 80%;
+      margin: auto;
+      background-color: whitesmoke;
+    }
+    .foot{
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: auto;
+      bottom: 0px;
+      padding: 0.5%;
+      background-color: #caf0f8;
+    }
+    
+  }
+  
+    </style>
+</head>
+{% block content %}
+<body>
+    {% load static %}
+    <div>
+        <div class="navigator">
+
+            <button class="btn homebtn">Home</button>
+            <button class="btn aboutbtn">About Us</button>
+            <button class="btn contactbtn">Contact Us</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="home">
+        <h1 style="text-align: center;">{{content.heading}}</h1>
+       {% if file_url %}
+            <img src="{{ file_url }}" alt="404" width="100%">
+            {% else %}
+            <p>No picture added.</p>
+            {% endif %}
+            
+          <br>
+       
+   
+        <div class="card">
+            <p>
+                {{content.subHead}}
+            </p>
+     
+            <p>
+                {{content.content1}}
+            </p>
+           
+        </div>
+        <br>
+        <table>
+            <th> <p>{{content.content2}} </p>  
+            </th>
+    
+            <th>
+                <p>{{content.content3}}</p>
+            </th>
+            <th>
+                <p>{{content.content4}}</p>
+            </th>
+        </table>
+        
+    </div>
+       <div>
+        
+       </div>
+    <br>
+    <div class="card about">
+        <h1><b>about us</b></h1>
+        <br>
+        <p>
+            {{content.aboutUs}}
+        </p>
+           
+    </div>
+    <br>
+    <div class="card contact">
+        <h3>contact Details</h3>
+        <h6>{{content.adrs1}}</h6>
+        <h6>{{content.adrs2}}</h6>
+        <h6>{{content.adrs3}}</h6>
+        <h6>{{content.celNo}}</h6>
+        <h6><b>{{content.email}}</b></h6>
+    </div>
+    
+    <hr>
+
+    <div class="foot">
+        <h3>Built From CR-DIY</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#"
+                id="contactFooter">learn More</a>|<a href="#" id="aboutFooter">About Us</a></h6>
+        <h6>© 2022-2022 T. All rights reserved. Version: 1.0.0</h6>
+        <br>
+    </div>
+    
+   </form>
+</body>
+</html>
+{% endblock %}

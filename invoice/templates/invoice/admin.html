@@ -1,0 +1,156 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<body>
+
+  <hr>
+  <br>
+
+
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="card home">
+      <h3><b>Products and Services</b></h3>
+
+      <label for="cars">Choose a category:</label>
+      <select class="custom-select" name="category" id="cars">
+        <option value="furniture">Furniture</option>
+        <option value="vehicles">Vehicles</option>
+        <option value="bakery">Bakey</option>
+      </select>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Brand</th>
+        </tr>
+        
+        <tr>
+          <td id="discript">
+            <input type="text" name="name" placeholder="Name">
+
+          </td>
+          <td id="rate">
+            <input type="number" name="price" placeholder="Price" step="0.01">
+          </td>
+          <td id="qty">
+            <input type="text" name="brand" placeholder="brand">
+          </td>
+        </tr>
+      </table>
+       <textarea maxlength="200" placeholder="Description" name="qty" id="" cols="90" rows="3"></textarea>
+
+      <input size="60" style="background-color: aqua;" type="file" accept="image/*" name="avater">
+
+      <div class="controls">
+        <a href="#" id="addMore">
+          <b>Add item +</b></a>
+        <a href="#" id="removeFields"> <b>Remove item -</b> </a>
+
+      </div>
+      <hr>
+      <br>
+      <button class="btn">Upload product</button>
+    </div>
+
+
+  </form>
+
+  <br>
+  <div class="invoices">
+
+  </div>
+
+
+  <div class="foot">
+
+    <h3>The smart Invoice</h3>
+    <h6><a href="#">Disclaimer</a>|<a href="#">Privacy policy</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+        href="#">Contact us</a>|<a href="#">About us</a></h6>
+    <h6>© 2022-2022 TR-invoice. All rights reserved. Version: 1.0.0</h6>
+    <br>
+
+  </div>
+  <script>
+    const homeElem = document.querySelector(".home");
+    const invoiceElem = document.querySelector(".invoices");
+    const customersElem = document.querySelector(".customers");
+    const cashflowElem = document.querySelector(".cashflow");
+    const homeBtn = document.querySelector(".homebtn");
+    const invoicebtn = document.querySelector(".invoicebtn");
+    const customersbtn = document.querySelector(".customersbtn");
+    const cashflowbtn = document.querySelector(".cashflowbtn");
+    invoiceElem.classList.add("hide");
+    customersElem.classList.add("hide");
+    cashflowElem.classList.add("hide");
+    function homeSelector() {
+      invoiceElem.classList.add("hide");
+      customersElem.classList.add("hide");
+      cashflowElem.classList.add("hide");
+      homeElem.classList.remove("hide");
+    };
+    function invoiceSelector() {
+      invoiceElem.classList.remove("hide");
+      customersElem.classList.add("hide");
+      cashflowElem.classList.add("hide");
+      homeElem.classList.add("hide");
+    };
+    function customersSelector() {
+      invoiceElem.classList.add("hide");
+      customersElem.classList.remove("hide");
+      cashflowElem.classList.add("hide");
+      homeElem.classList.add("hide");
+    };
+    function cashflowSelector() {
+      invoiceElem.classList.add("hide");
+      customersElem.classList.add("hide");
+      cashflowElem.classList.remove("hide");
+      homeElem.classList.add("hide");
+    };
+    homeBtn.addEventListener('click', homeSelector);
+    invoicebtn.addEventListener('click', invoiceSelector);
+    customersbtn.addEventListener('click', customersSelector);
+    cashflowbtn.addEventListener('click', cashflowSelector);
+  </script>
+  <script>
+    const discript = document.getElementById('discript');
+    const rate = document.getElementById('rate');
+    const qty = document.getElementById('qty');
+    const addMore = document.getElementById('addMore');
+    const removeFields = document.getElementById('removeFields');
+    addMore.onclick = function () {
+      const newDescript = document.createElement('input');
+      newDescript.setAttribute('type', 'text');
+      newDescript.setAttribute('name', 'descript');
+      newDescript.setAttribute('placeholder', 'description')
+      discript.appendChild(newDescript);
+
+      const newRate = document.createElement('input');
+      newRate.setAttribute('type', 'number');
+      newRate.setAttribute('name', 'rate');
+      newRate.setAttribute('step', '0.01');
+      newRate.setAttribute('placeholder', 'rate per Item in R');
+      rate.appendChild(newRate);
+
+      const newQty = document.createElement('input');
+      newQty.setAttribute('type', 'number');
+      newQty.setAttribute('name', 'qty');
+      newQty.setAttribute('placeholder', 'quantity');
+      qty.appendChild(newQty);
+    };
+    removeFields.onclick = function () {
+      const discriptTag = discript.getElementsByTagName('input');
+      const qtyTag = qty.getElementsByTagName('input');
+      const rateTag = rate.getElementsByTagName('input');
+      if (discriptTag.length > 1) {
+        discript.removeChild(discriptTag[(discriptTag.length) - 1]);
+        rate.removeChild(rateTag[(rateTag.length) - 1]);
+        qty.removeChild(qtyTag[(qtyTag.length) - 1]);
+      };
+    }
+  </script>
+</body>
+
+{% endblock %}

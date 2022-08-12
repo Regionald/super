@@ -1,0 +1,194 @@
+{% extends 'diy/base.html' %}
+{% block content %}
+
+<body>
+    {% load static %}
+    <div>
+        <div class="navigator">
+
+            <button class="btn homebtn">Home</button>
+            <button class="btn aboutbtn">About Us</button>
+            <button class="btn contactbtn">Contact Us</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="home">
+        <div class="card">
+            <h1 style="text-align: center;">Your Dream Destination</h1>
+            <br>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+           <input type="text" placeholder="Heading" class="input" name="heading" required>
+           <input type="text" placeholder="company name" class="input" name="companyName" required>
+            <div class="slideshow-container">
+                <div class="mySlide fade">
+                    <img src="{% static 'pic/edu.jpg' %}" alt="education" style="width: 100%;
+            height: 500px;">
+                    <div class="text">Tourism</div>
+                </div>
+
+                <div class="mySlide fade">
+                    <img src="{% static 'pic/Logistics.jpg' %}" alt="Logistics" style="width: 100%;height: 500px;">
+                    <div class="text">Tourism</div>
+                </div>
+
+
+                <div class="mySlide fade">
+                    <img src="{% static 'pic/market.jpg' %}" alt="Marketing" style="width: 100%;height: 500px;">
+                    <div class="text">Tourism</div>
+                </div>
+
+                <div class="mySlide fade">
+                    <img src="{% static 'pic/tourism.jpg' %}" alt="Tourism" style="width: 100%;height: 500px;">
+                    <div class="text">Tourism</div>
+                </div>
+
+
+            </div>
+            
+            <br>
+            <div style="text-align: center;">
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+            </div>
+            <input type="file" name="image1" accept="image/*">
+            <hr>
+            <input type="file" name="image2" accept="image/*">
+            <hr>
+            <input type="file" name="image3" accept="image/*">
+            <hr>
+            <input type="file" name="image4" accept="image/*">
+        </div>
+        
+        <br>
+        <div class="card">
+            <p>Press the Dot to view more</p>
+            <div class="slideshow-container">
+                <div class="mySlide3 fade">
+                    <h3 >V&A water Front</h3>
+                    <p style="width: 80%;margin: auto;">Named after Great Britain’s Queen Victoria and her youngest son Alfred, the V&A is one of the top tourist attractions
+                         in South Africa and a very popular destination for local families and tourists alike. Indulge in an amazing
+                          choice of hundreds of shopping outlets, curio shops, fine dining, lots of (mostly free) live entertainment – 
+                          including creative workshops, concerts and puppet shows. A choice of museums and markets,
+                           and a chance to learn all about the city harbour together with a visit to the popular and family-friendly Two Oceans Aquarium makes for a great day out. There are many outdoor activities available from the V&A, including fun harbour cruises, helicopter flips and boat charters.
+                  </p>
+                    
+                </div>
+
+
+
+                <div class="mySlide3 fade">
+                    <h3>Kruger National Park</h3>
+                    <p style="width: 80%;margin: auto;">
+                        kruger National Park is home to more than 20000 elephants, 
+                        various lions, black rhinos, buffaloes, hyenas, leopards, zebras and a
+                         plentiful variety of antelopes. It is the third largest park in South Africa
+                          and also concentrates on preserving a wide variety of flora. There is also a 
+                          main camp for tourists featuring a swimming pool, restaurant, floodlit water
+                           hole and different types of accommodation.
+                    </p>
+                </div>
+
+
+                <div class="mySlide3 fade">
+                    <h3>Maropeng</h3>
+                    <p style="width: 80%;margin: auto;">
+                        The Maropeng Exhibition in the Tumulus Building within the Cradle of Humankind Heritage Site is an hour’s drive 
+                        from Johannesburg, and is one of eight World Heritage sites in South Africa. The 47,000-hectare complex, having revealed and answered many questions about our ancestors, 
+                        exhibits clear and thought-provoking exhibits, including stone tools, original fossils and engraved rocks. Their technology suggests that they originate from the Stone Age,
+                         approximately 1 million years ago! This is a fascinating learning experience for the whole family
+                    </p>
+                </div>
+
+                <a class="prev" onclick="plusSlide3(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlide3(1)">&#10095;</a>
+            </div>
+
+            <br>
+            <div style="text-align: center;">
+                <span class="dot3" onclick="currentSlide3(1)"> </span>
+                <span class="dot3" onclick="currentSlide3(2)"> </span>
+                <span class="dot3" onclick="currentSlide3(3)"> </span>
+            </div>
+            <input type="text" name="header1" placeholder="First header" required>
+            <input type="text" name="content1" placeholder="Content 1" required>
+            <input type="text" name="header2" placeholder="Second header" required>
+            <input type="text" name="content2" placeholder="Content 2" required>
+            <input type="text" name="header3" placeholder="Third header" required>
+            <input type="text" name="content3" placeholder="Content 3" required>
+        </div>
+    </div>
+    <br>
+    <div class="card about">
+        <h1><b>about us</b></h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet urna vel felis volutpat
+            pharetra. Vivamus volutpat eget elit nec pellentesque. Nam tristique tortor vitae lectus volutpat,
+            sed pellentesque massa semper. Sed pellentesque leo massa, vitae fermentum ipsum semper quis. Duis
+            nunc velit, eleifend eu sollicitudin ac, gravida quis ex. Aenean nec tristique diam, mattis interdum
+            odio. Nam mattis mauris metus, ut tristique nunc sollicitudin in. Sed a orci eu ipsum viverra dapibus.
+            Praesent id convallis leo. Mauris non porta nibh. Phasellus efficitur aliquet risus nec feugiat.
+            <br>
+            Proin placerat, lorem id rhoncus dapibus, eros urna sagittis ipsum, egestas tristique sem tortor nec mi.
+            Fusce at metus quis eros varius rhoncus. Aliquam vehicula semper sapien, vel varius nibh fermentum nec.
+            In aliquam congue ipsum, at placerat turpis suscipit in. Aenean eget arcu ut nisl gravida congue.
+            Pellentesque vel felis quis elit blandit convallis. Praesent ut tempus dolor. Donec eu dolor in sapien
+            imperdiet accumsan in vel odio. Morbi nulla magna, elementum vitae urna sit amet, pulvinar accumsan
+            magna. Etiam quis vulputate mi.
+            <br>
+            <br>
+            Praesent vitae tortor tincidunt, congue diam nec, fringilla lectus. Suspendisse blandit libero sem, in
+            varius sapien porttitor in. Cras porta accumsan dignissim. Nulla risus mi, maximus eu varius vitae,
+            euismod sed nulla. Maecenas vitae ipsum vitae lectus laoreet fringilla. Praesent sed lacus id urna
+            imperdiet lacinia. Aenean posuere in enim varius posuere. Nulla et metus vel risus porta suscipit
+            vel sit amet leo. Vivamus sit amet nulla nisi. Vestibulum volutpat erat id tellus rhoncus dapibus.
+            Quisque sollicitudin arcu et ligula blandit, vitae molestie mauris vestibulum. Nam venenatis, felis
+            et pellentesque ornare, enim orci sagittis massa, vitae lobortis quam urna sed dui. Phasellus cursus
+            nibh a neque fringilla commodo. Morbi laoreet quam nulla. Quisque vel convallis sem. Nunc finibus ante
+            nulla, vitae lobortis mi luctus vitae.
+            <br>
+            Curabitur vel nisl ac turpis tincidunt aliquet. Curabitur efficitur, odio eget iaculis molestie,
+            ex leo consequat nibh, eu sodales lacus nisi id ante. Ut fermentum iaculis ipsum, consequat vehicula
+            enim
+            pulvinar in. Donec nec odio id felis fermentum molestie in et tortor. Phasellus sed felis vitae nisi
+            consectetur facilisis sed sodales lacus. Mauris sollicitudin nec ex at lobortis. Pellentesque tempor,
+            augue
+            nec interdum posuere, turpis turpis auctor mauris, nec blandit dui orci sed ex. Phasellus accumsan
+            turpis
+            vitae libero vehicula auctor. Nam eget magna volutpat, dictum ante consectetur, pharetra nunc. Ut
+            consequat
+            eleifend est, vel ultrices lacus auctor a. Maecenas dapibus iaculis orci non suscipit. Aliquam at arcu
+            tempor, commodo tellus ac, ullamcorper metus. Nam mattis tincidunt imperdiet.
+        </p>
+        <textarea name="aboutUs" id="aboutUs" cols="30" rows="10" required></textarea>
+    </div>
+    <br>
+    <div class="card contact">
+        <h3>contact Details</h3>
+        <h6>Cnr Kingsway & University Roads</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs1" required>
+        <h6>Auckland Park</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs2" required>
+        <h6>Johannesburg</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs3" required>
+        <h6>Tel:011 559 4555</h6>
+        <input type="number" placeholder="ADDRESS" class="input" name="celNo" required>
+        <h4><b>Send email</b></h4>
+        <input type="email" placeholder="ADDRESS" class="input" name="email" required>
+        <input type="submit">
+    </form>
+    </div>
+    <hr>
+
+    <div class="foot">
+        <h3>Your Dream Destination</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#"
+                id="contactFooter">Contact us</a>|<a href="#" id="aboutFooter">About Us</a></h6>
+        <h6>© 2022-2022 Your Dream Destination. All rights reserved. Version: 1.0.0</h6>
+        <br>
+    </div>
+</body>
+{% endblock %}

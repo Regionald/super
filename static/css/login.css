@@ -1,0 +1,102 @@
+body{
+
+    max-width: 100%;
+    margin: auto;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+    h1,h2,h3,h4,h5,h6,p{
+      color: #000000;
+      margin: 0.75%;
+    }
+    .navigator{
+        display: flex;
+        background-color:#E3F2FD;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    .btn{
+        font: inherit;
+        width: 32%;
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: #90caf9;
+        color: white;
+        border: 1px solid #42A5F5;
+        margin: 0.25%;
+        padding:1.15%;
+      }
+      .showBtn{
+        background-color: yellowgreen;
+        color: white;
+        margin: 1%;
+        padding:2%;
+        justify-content: center;
+        text-align: center;
+        display: none;
+      }
+      .btn:hover {
+        background-color: skyblue;
+        border-color: skyblue;
+      }
+      input{
+        width: 60%;
+        padding: 2%;
+        margin: 1%;
+        }
+        input:focus{
+            background-color:lightblue;
+        
+        }
+        
+    
+    hr{
+        background-color: red;
+      }
+      .card {
+        background-color:#E3F2FD;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        width: 70%;
+        margin: auto;
+        text-align: center;
+        justify-content: center;
+      }
+      .input{
+        margin-bottom: 0.2em;
+      }
+      .hide{
+        display: none;
+      }
+      a{
+        text-decoration: none;
+        padding: 0.2px;
+        margin:0.25%;
+      }
+      .foot{
+        display: none;
+      }
+      .active{
+        background-color: #42A5F5;
+        color: black;
+      }
+      
+      @media (min-width:720px){
+        body{
+          width: 80%;
+          margin: auto;
+          background-color:#E3F2FD;
+        }
+        .foot{
+          display: block;
+          text-align: center;
+          width: 100%;
+          margin: auto;
+          bottom: 0px;
+          padding: 0.5%;
+          background-color: #E3F2FD;
+        }
+        
+      }
+      

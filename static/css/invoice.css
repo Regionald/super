@@ -1,0 +1,246 @@
+body{
+
+    max-width: 100%;
+    margin: auto;
+    background-color: #E3F2FD;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color:#E3F2FD;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color: #42A5F5;
+        color: black;
+    }
+    h1,h2,h3,h4,h5,h6,p{
+      color: #000000;
+      margin: 0.75%;
+    }
+.invoices{
+        background-color:#E3F2FD;
+}
+.invoice{
+ max-width: 74%;
+ margin: auto;
+ background-color: white;
+}
+.action{
+    max-width: 74%;
+    margin: auto;
+    padding: 1%;
+    text-align: center;
+   }
+.action button{
+    padding: 2%;
+    color: yellow;
+    background-color: black;
+    border-radius: 15px;
+    border-color: black;
+}
+.box{
+    display: flex;
+    
+}
+.boxx{
+  width: 70%;
+  margin: auto;
+}
+.right{
+    margin-right: auto;
+    width: 50%;
+    padding: 1%;
+}
+.oval{
+  background-color: white;
+  display: flex;
+  margin: auto;
+  max-width: 74%;
+  border-radius: 20px 20px 20px 20px;
+}
+.search{
+  width: 70%;
+  display: flex;
+  margin: auto;
+  border-radius: 20px 20px 20px 20px;
+  position: sticky;
+  top: 0;
+}
+.searchBtn{
+  padding: 2%;
+  margin: 1%;
+}
+.customer{
+  width: 70%;
+  display: flex;
+  background-color:white;
+}
+.status{
+  width: 15%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.left{
+    margin-left: auto;
+    width: 50%;
+    padding: 1%;
+    text-align: center;
+    align-items: center;
+}
+.picture{
+    width:25%;
+}
+.vl {
+  border-left: 6px solid green;
+  height: 100px;
+}
+.notSent {
+  border-left: 6px solid red;
+  height: 100px;
+}
+.sent {
+  border-left: 6px solid green;
+  height: 100px;
+}
+.dropbtn {
+  background-color: #90CAF9;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #90CAF9;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #90CAF9;}
+.contact{
+    text-align: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    }
+table{width: 100%;
+    margin: auto;
+}
+.box table tr:hover {background-color: yellow;
+}
+th,td{
+text-align: center;
+border-bottom: 1px solid #ddd;
+}
+
+    .navigator{
+        background-color:white;
+        display: flex;
+    }
+    .btn {
+      background-color: #90caf9;
+      color: white;
+      }
+      .btn:hover {
+        background-color: #9c1458;
+        border-color: #9c1458;
+      }
+      input{
+        width: 95%;
+        padding: 2%;
+        margin: 1%;
+        }
+        input:focus{
+            background-color:lightblue;
+        
+        }
+        
+    
+    hr{
+        background-color: red;
+      }
+      .card {
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        width: 70%;
+        margin: auto;
+        text-align: center;
+      }
+      table{
+        width: 100%;
+        table-layout:fixed;
+      }
+      .input{
+        margin-bottom: 0.2em;
+      }
+      .btn:active{
+          background-color: black;
+          color: yellow;
+      }
+      .hide{
+        display: none;
+      }
+      .foot{
+        display: none;
+      }
+      
+      @media (min-width:720px){
+        body{
+          width: 80%;
+          margin: auto;
+          background-color: #E3F2FD;
+        }
+        .foot{
+          display: block;
+          text-align: center;
+          width: 100%;
+          margin: auto;
+          bottom: 0px;
+          padding: 0.5%;
+          background-color:#E3F2FD;
+        }
+        
+      }
+

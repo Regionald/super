@@ -1,0 +1,202 @@
+{% extends 'loginlayout.html' %}
+
+{% block content %}
+<body>
+
+   <div class="navigator">
+   <button class="btn homebtn">Home</button>
+   <button class="btn aboutbtn">About us</button>
+   <button class="btn contactbtn">Contact us</button>
+
+   </div>
+   <hr>
+   <h1 style="text-align: center;">Smart Invoice</h1>
+   <br>
+   <div class="card home">
+       <h1><b>Hello there!</b></h1>
+       <h6>Sign in with your TR-Invoice account</h6>
+       <form action=" " method="post">
+           {% csrf_token %}
+           
+           <input class="input-field" type="email" name="email" placeholder="Sign in with your account" class="input">
+           <i class="fa fa-user icon"></i>
+           <input class="input-field" type="password" name="password" placeholder="Login password" class="input" id="password">
+           <i class="fa fa-eye icon" onclick="showPassword()"></i>
+           <br>
+           {% if messages %}
+           {% for message in messages %}
+            <div class="alert alert-{{message.tags}}" style="color: red;">{{message}}</div>
+            {% endfor %}
+           {% endif %}
+           <br>
+           <h6></h6>
+           <button type="submit" class="btn">login</button>
+           <br>
+           <a href="#">Forgot password</a>
+       </form>
+       <br>
+        <button class="btn signUpbtn">Sign-up</button>
+   </div>
+
+   <div class="card signUp">
+       <h1><b>Hello there!</b></h1>
+       <h6>please sign-up</h6>
+       <form action="/account/create/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+           <input type="email" placeholder="Email" class="input" name="email" required>
+           <br>
+           <input type="password" placeholder="Password" class="input" id="password" name="password" required>
+           <br>
+           <input type="text" placeholder="Company Name" name="companyName" required>
+           <input type="text" placeholder="Company Address" name="companyAddress" required>
+           <input type="text" placeholder="Town/City" name="town" required>
+           <input type="number" placeholder="postal code" name="postalCode" required>
+           <input type="number" placeholder="account number" name="accountNumber" required><br>
+           <input size="60" style="background-color: aqua;" type="file" accept="image/*" name="logoName">
+           <p>By creating an account you agree to our <a href="3">Terms and Privacy</a></p>
+           <button type="submit" class="btn">Sign in</button>
+           <br>  
+       </form>
+   </div>
+
+
+   <br>
+   <div class="card about">
+       <h1><b>about us</b></h1>
+       <br>
+       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet urna vel felis volutpat
+           pharetra. Vivamus volutpat eget elit nec pellentesque. Nam tristique tortor vitae lectus volutpat,
+           sed pellentesque massa semper. Sed pellentesque leo massa, vitae fermentum ipsum semper quis. Duis
+           nunc velit, eleifend eu sollicitudin ac, gravida quis ex. Aenean nec tristique diam, mattis interdum
+           odio. Nam mattis mauris metus, ut tristique nunc sollicitudin in. Sed a orci eu ipsum viverra dapibus.
+           Praesent id convallis leo. Mauris non porta nibh. Phasellus efficitur aliquet risus nec feugiat.
+           <br>
+           Proin placerat, lorem id rhoncus dapibus, eros urna sagittis ipsum, egestas tristique sem tortor nec mi.
+           Fusce at metus quis eros varius rhoncus. Aliquam vehicula semper sapien, vel varius nibh fermentum nec.
+           In aliquam congue ipsum, at placerat turpis suscipit in. Aenean eget arcu ut nisl gravida congue.
+           Pellentesque vel felis quis elit blandit convallis. Praesent ut tempus dolor. Donec eu dolor in sapien
+           imperdiet accumsan in vel odio. Morbi nulla magna, elementum vitae urna sit amet, pulvinar accumsan
+           magna. Etiam quis vulputate mi.
+           <br>
+           <br>
+           Praesent vitae tortor tincidunt, congue diam nec, fringilla lectus. Suspendisse blandit libero sem, in
+           varius sapien porttitor in. Cras porta accumsan dignissim. Nulla risus mi, maximus eu varius vitae,
+           euismod sed nulla. Maecenas vitae ipsum vitae lectus laoreet fringilla. Praesent sed lacus id urna
+           imperdiet lacinia. Aenean posuere in enim varius posuere. Nulla et metus vel risus porta suscipit
+           vel sit amet leo. Vivamus sit amet nulla nisi. Vestibulum volutpat erat id tellus rhoncus dapibus.
+           Quisque sollicitudin arcu et ligula blandit, vitae molestie mauris vestibulum. Nam venenatis, felis
+           et pellentesque ornare, enim orci sagittis massa, vitae lobortis quam urna sed dui. Phasellus cursus
+           nibh a neque fringilla commodo. Morbi laoreet quam nulla. Quisque vel convallis sem. Nunc finibus ante
+           nulla, vitae lobortis mi luctus vitae.
+           <br>
+           Curabitur vel nisl ac turpis tincidunt aliquet. Curabitur efficitur, odio eget iaculis molestie,
+           ex leo consequat nibh, eu sodales lacus nisi id ante. Ut fermentum iaculis ipsum, consequat vehicula enim
+           pulvinar in. Donec nec odio id felis fermentum molestie in et tortor. Phasellus sed felis vitae nisi
+           consectetur facilisis sed sodales lacus. Mauris sollicitudin nec ex at lobortis. Pellentesque tempor, augue
+           nec interdum posuere, turpis turpis auctor mauris, nec blandit dui orci sed ex. Phasellus accumsan turpis
+           vitae libero vehicula auctor. Nam eget magna volutpat, dictum ante consectetur, pharetra nunc. Ut consequat
+           eleifend est, vel ultrices lacus auctor a. Maecenas dapibus iaculis orci non suscipit. Aliquam at arcu
+           tempor, commodo tellus ac, ullamcorper metus. Nam mattis tincidunt imperdiet.
+       </p>
+   </div>
+   <br>
+   <div class="card contact">
+       <h3>contact Details</h3>
+       <h6>Cnr Kingsway & University Roads</h6>
+       <h6>Auckland Park</h6>
+       <h6>Johannesburg</h6>
+       <h6>Tel:011 559 4555</h6>
+       <h4><b>Send email</b></h4>
+       <form action="/contactUs">
+           <textarea name="emailMessage" id="" cols="30" rows="10"></textarea>
+           <br>
+           <button class="btn" type="submit">send</button>
+       </form>
+   </div>
+   <hr>
+   
+     <div class="foot">
+       <h3>The smart Invoice</h3>
+       <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#" id="contactFooter">Contact us</a>|<a
+               href="#" id="aboutFooter">About us</a></h6>
+       <h6>© 2022 TR-invoice. All rights reserved. Version: 1.0.0</h6>
+       <br>
+   </div>
+
+
+
+   <script>
+       const homeElem = document.querySelector(".homebtn");
+       const aboutElem = document.querySelector(".aboutbtn");
+       const contactElem = document.querySelector(".contactbtn");
+       const signUpElem=document.querySelector(".signUpbtn")
+       const contactFooter=document.getElementById('contactFooter');
+       const aboutFooter=document.getElementById('aboutFooter');
+       const home = document.querySelector(".home");
+       const about = document.querySelector(".about");
+       const contact = document.querySelector(".contact");
+       const singUp=document.querySelector(".signUp");
+       contact.classList.add("hide");
+       about.classList.add("hide");
+       singUp.classList.add('hide');
+       homeElem.classList.add('active')
+      aboutFooter.onclick=aboutSelector;
+      contactFooter.onclick=contactSelector;
+       function homeSelector() {
+           about.classList.add("hide");
+           contact.classList.add("hide");
+           home.classList.remove("hide");
+           singUp.classList.add('hide');
+
+
+           homeElem.classList.add('active');
+           contactElem.classList.remove('active');
+           aboutElem.classList.remove('active')
+       };
+       function aboutSelector() {
+           home.classList.add("hide");
+           contact.classList.add("hide");
+           about.classList.remove("hide");
+           singUp.classList.add('hide');
+
+
+           aboutElem.classList.add('active');
+           homeElem.classList.remove('active');
+           contactElem.classList.remove('active');
+
+       };
+       function contactSelector() {
+           about.classList.add("hide");
+           home.classList.add("hide");
+           contact.classList.remove("hide");
+           singUp.classList.add('hide');
+
+           contactElem.classList.add('active');
+           aboutElem.classList.remove('active');
+           homeElem.classList.remove('active');
+
+       };
+        function singUpSelector() {
+           about.classList.add("hide");
+           home.classList.add("hide");
+           contact.classList.add("hide");
+           singUp.classList.remove('hide');
+       };
+       homeElem.addEventListener('click', homeSelector);
+       aboutElem.addEventListener('click', aboutSelector);
+       contactElem.addEventListener('click', contactSelector);
+       signUpElem.addEventListener('click',singUpSelector)
+   </script>
+   <script>
+       function showPassword() {
+       const  passwordElem= document.getElementById("password");
+           if (passwordElem.type === "password") {
+               passwordElem.type = "text";
+           } else {
+               passwordElem.type = "password";
+           }
+       }
+   </script>
+
+</body>
+{% endblock %}

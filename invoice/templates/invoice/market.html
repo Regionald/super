@@ -1,0 +1,59 @@
+{% extends 'market.html' %}
+
+{% block content %}
+
+<body>
+{% load static %}
+    <div class="sidenav">
+        <a onclick="myFunction()">Departments <i class="Inventory arrow down"></i></a>
+        <div id="subs">
+            <a sensors()>Books </a>
+            <a>Furniture</a>
+            <a>Liquor</a>
+            <a>Home and appliance</a>
+            <a>Office and Stationery</a>
+            <a>Grocerries</a>
+            <a>Household</a>
+        </div>
+        <a>Terms and conditions</a>
+        <a>Policy</a>
+        <a>Login/sign-up</a>
+
+    </div>
+
+    <div class="main">
+    <form class="search" action=" " method="POST">
+            {% csrf_token %}
+            <input name="search"cls
+            c style="width: 60%;" type="text" placeholder="search by brand name">
+            <select class="custom-select" name="category" id="">
+            <option value="Household">Household</option>  
+            <option value="books">books</option>   
+            </select>
+            <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <hr>
+    <div class="container headcenter">
+
+        
+    
+        <div class="row">
+            {% for product in product %}
+            <div class="col-4 small">
+                <h2>{{product.name}}</h2>
+                <img class="productImage"  src="{{product.avater.url}}" alt="Item 1" height=" 300px">
+                <h3>R{{product.price}}</h3>
+                <div class="content">
+                    {{product.descript}}
+                    <div>
+                        <a href="#" target="_self"><button class="sButbtn">---more---</button></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    </div>
+</body>
+{% endblock %}

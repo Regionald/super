@@ -1,0 +1,123 @@
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap_icons %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static '/css/style.css' %}">
+  <title>{% block title %}Business Case{% endblock %}</title>
+  </head>
+<body>
+  <body>
+    <div class="navbar">
+      </div>
+      <div class="responsive">
+    <section class="row">
+      <div class="login">
+        <table>
+          <thead>
+            <tr>
+              <th scope="row">
+              </th>
+              <td>
+					Date:{{user_form.pro_date}}<br>
+					Submitted by:{{user_form.name}}<br>
+					Role/Title:{{user_form.role}}<br>
+              </td>
+			   <td>
+                  <h4> {% if user_form.logo %}
+				<img src="{{ user_form.logo.path }}" alt="image" width="150px">
+					{% endif %}</h4>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">
+				Exective Summary:
+              </th>
+              <td class="schedule-offset" colspan="2">
+               {{user_form.summary}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+			  Project:
+              </th>
+              <td class="schedule-offset" colspan="2">
+              {{user_form.project}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+               Limitations:
+              </th>
+              <td class="schedule-offset" colspan="2">
+               {{user_form.limitations}}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                Approach:
+              </th>
+              <td class="schedule-offset" colspan="2">
+                {{user_form.approach}}
+              </td>
+            </tr>
+			  <tr>
+              <th scope="row">
+                Benefits:
+              </th>
+              <td class="schedule-offset" colspan="2">
+                {{user_form.benefits}}
+              </td>
+            </tr>
+			  <tr>
+              <th scope="row">
+                Opportunities:
+              </th>
+              <td class="schedule-offset" colspan="2">
+               {{user_form.opportunities}}
+              </td>
+            </tr>
+			  <tr>
+              <th scope="row">
+                Nobel:
+              </th>
+              <td class="schedule-offset" colspan="2">
+                {{user_form.nobel}}
+              </td> 
+            </tr>
+			  <tr>
+              <th scope="row">
+                Threat:
+              </th>
+              <td class="schedule-offset" colspan="2">
+                {{user_form.threat}}
+              </td>
+            </tr>
+			  <tr>
+              <th scope="row">
+                Financial:
+              </th>
+              <td class="schedule-offset" colspan="2">
+                {{user_form.financial}}
+              </td>
+            </tr>
+			  <tr>
+              <th scope="row">
+                Risk:
+              </th>
+              <td class="schedule-offset" colspan="2">
+              {{user_form.risk}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+     </div>
+    </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cleaning Services{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/mai.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}" />
+</head>
+<body>
+    {% block content %}
+    <div class="content" style="max-width:1440px;">
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="/diy/cleaning/"><i class="fa fa-shower"></i>Cleaning and Services</a>
+          </div>
+          <ul id="menu">
+            <li><a href="/diy/cleaning/">Home</a></li>
+           <li><a href="#services_section">Services</a></li>
+         <li><a href="#about_section">About</a></li>
+         <li><a href="#contact_section">Contact</a></li>
+         <li><a href="/diy/make/">DIY</a></li>
+         
+          </ul>
+        </div>
+      </nav>
+      <section id="about_section">
+      <div class="about-us section-padding" data-scroll-index='1'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+           
+              <span class="section-title-line"></span> </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-info">
+                <div class="sub-title-paragraph">
+                  <h4>About Us.</h4>
+                  <p>Nam non erat feugiat, pellentesque mi ut, finibus tellus. Ut eget ex sodales, feugiat elit non, semper ex. Sed laoreet lectus nisl, sit amet porttitor lacus porta nec. Quisque sit amet metus sagittis, tincidunt tellus in, efficitur lorem. Sed scelerisque tellus nisl, eget tincidunt elit aliquet vitae. Integer id felis ut ipsum tristique iaculis. Mauris sed nibh enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc sagittis rhoncus sollicitudin. Maecenas eget dui a neque rutrum tincidunt sed non ipsum.</p>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-img"> <img src="{% static 'images/clean.jpg' %}" alt="" class="img-responsive"/> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="services_section">
+      <div class="services section-padding bg-grey" data-scroll-index='2'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+              <h3>Services</h3>
+              <span class="section-title-line"></span> </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-building"></i> </div>
+                <div class="icon-text">
+                  <h4 class="title-box">Offices</h4>
+                  <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-home"></i></div>
+                <div class="icon-text">
+                  <h4 class="title-box">Homes</h4>
+                  <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-bed"></i> </div>
+                  <h4 class="title-box">Guesthouses & Bnb's</h4>
+                  <p>Sed malesuada, est eget condimentum iaculis, nisi ex facilisis metus.</p>
+                </div>
+              </div>
+            </div>
+     </div>
+     </div>
+     </section>
+     </div>
+     <section id="contact_section">
+      <div class="contact section-padding" data-scroll-index='4'>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12 section-title text-center">
+                        <h3>Contact Us For More</h3>
+                        <span class="section-title-line"></span> </div>
+                      <div class="col-lg-5 col-md-4">
+                        <div class="part-info">
+                          <div class="info-box">
+                            <div class="icon"> </div>
+                            <div class="content">
+                              <h4></h4>
+                              <p></p>
+                            </div>
+                          </div>
+                          <div class="info-box">
+                            <div class="icon"></div>
+                            <div class="content">
+            <h7><i class="fas fa-map-marker-alt"></i> Cnr Kingsway & University Roads</H7><br>
+             <h7><i class="fas fa-map-marker-alt"></i> Auckland Park</h7><br>
+          <h7><i class="fas fa-map-marker-alt"></i> Johannesburg</h7><br>
+          <h7><i class="fas fa-phone"></i> Tel:011 559 4555</h7>
+       
+                            </div>
+                          </div>
+                          <div class="info-box">
+                            <div class="icon"> </div>
+                            <div class="content">
+                              <h4></h4>
+                              <p><a href="#"></a></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-7 col-md-8">
+                        <div class="contact-form">
+                          <form class='form' id='contact-form' method='post' data-toggle='validator'>
+                            <input type='hidden' name='form-name' value='contact-form' />
+                            <div class="messages"></div>
+                            <div class="controls">
+                              <div class="row">
+                                <div class="col-lg-6">
+                                  <div class="form-group">
+                                    <input id="form_name" type="text" name="name" placeholder="Name *" required data-error="name is required.">
+                                    <div class="help-block with-errors"></div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="form-group">
+                                    <input id="form_email" type="email" name="email" placeholder="Email *" required data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-12">
+                                  <div class="form-group">
+                                    <input id="form_subject" type="text" name="subject" placeholder="Subject">
+                                  </div>
+                                </div>
+                                <div class="col-lg-12 form-group">
+                                  <textarea id="form_message" name="message" class="form-control" placeholder=" Type Your Message " rows="4" required data-error="Please,leave us a message."></textarea>
+                                  <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                  <button class="bttn btn-primary rounded-pill">Send Message</button>
+                                </div>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </section>
+     <footer class="footer-copy">
+     <div class="container-fluid">
+        <div class="row">
+          <div class="row">
+            <div class="col item social">
+                <a href="#"><i class="fab fa-facebook"> Facebook</i></a>
+                <a href="#"><i class="fab fa-twitter"> Twitter</i></a>
+                <a href="#"><i class="fab fa-youtube"> Youtube</i></a>
+                <a href="#"><i class="fab fa-instagram"> Instagram</i></a>
+        </div>
+    <div class="col-md-12">
+    <p>2022 &copy; DIY.</a></p>
+     </div>
+</div>
+     </div>
+     </footer>
+{% endblock %}
+</body>
+</html>
+
+
+

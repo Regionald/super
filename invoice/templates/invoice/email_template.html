@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invoice</title>
+</head>
+<body>
+    {% for client in client %}
+    <br>
+    <div class="invoices">
+
+        <div class="invoice" id="{{client.id}}">
+
+            <div class="box" style=" display: flex;">
+                <div class="right" style="margin-right: auto;
+                width: 50%;
+                padding: 1%;">
+                    <b>University of Johannesburggg</b>
+                    <p>210 Maxixini</p>
+                    <p>Acornhoek{{client.id}}</p>
+                    <p>1360</p>
+                </div>
+                <div class="left" style="margin-left: auto;
+                width: 50%;
+                padding: 1%;
+                text-align: center;
+                align-items: center;">
+                    <b>Invoice</b><br>
+                    <br>
+                    <img src=cid:{{user.avatar}} alt="pic" class="picture">
+                </div>
+            </div>
+            <hr>
+
+            <div class="box" style=" display: flex;">
+                <div class="right" style="margin-right: auto;
+                width: 50%;
+                padding: 1%;">
+                    <p>bill to :</p>
+                    <b>{{client.clientName}}</b>
+                    <p>{{client.clientAddress}}</p>
+                    <p>{{client.clientTown }}</p>
+                    <p>{{client.clientpostalCode}}</p>
+                </div>
+                <div class="left" style="margin-left: auto;
+                width: 50%;
+                padding: 1%;
+                text-align: center;
+                align-items: right;">
+                    <b>Invoice Id:inv-{{client.id}}</b><br>
+                    <h6>Date:{{client.date}}</h6>
+                    <h6>Account number:1541048928</h6>
+                    <b>Due Date:{{client.dueDate}}</b><br>
+
+                </div>
+            </div>
+            <hr>
+            <div class="box">
+                <table style="width: 100%;
+                margin: auto;">
+                    <tr>
+                        <th style="text-align: center;">DESCRIPTION</th>
+                        <th style="text-align: center;">RATE</th>
+                        <th style="text-align: center;">QTY</th>
+                        <th style="text-align: center;">AMOUNT</th>
+                    </tr>
+                    {% for product in client.products  %}
+                    <tr>
+                        <td style="text-align: center;">{{product.descpript}}</th>
+                        <td style="text-align: center;">R{{product.rate}}</th>
+                        <td style="text-align: center;">{{product.qty}}</th>
+                        <td style="text-align: center;">R{{product.amount}}</th>
+                    </tr>
+                    {% endfor  %}
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>sub total</th>
+                        <td>R{{client.subTotal}}</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>vat @ 15%</th>
+                        <td>R{{client.vat}}</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>TOTAL</th>
+                        <td>R{{client.Total}}</th>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="box" style="text-align: center;">
+                <div class="contact">
+                    <b>Thank you for your Business</b>
+                    <h6>0676527884|regionaldmongwe@gmail.com|SMEs.com</h6>
+                    <a href="#">invoice powered by TR-invoice</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>

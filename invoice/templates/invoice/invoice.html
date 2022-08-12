@@ -1,0 +1,90 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<body>
+  <hr>
+  <div class="searcher">
+    <div class="profile">
+      <div class="dropdown">
+        <button class="dropbtn fa fa-user-circle" aria-hidden="true"></button>
+        <div class="dropdown-content">
+          <a href="profile/"><i class="fa fa-edit"></i>&nbspProfile</a>
+          <hr>
+          <a href="logout/"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbspLogout</a>
+        </div>
+      </div>
+    </div>
+    <form class="search" action="" method="POST">
+      {% csrf_token %}
+      <input style="width: 60%;" type="text" placeholder="search by customer name" name="clientName">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <hr>
+  <div class="invoices">
+
+    {% for client in client %}
+
+
+    <br>
+    <div class="oval">
+
+      <div class="status">
+        <div class={{client.status}}></div>
+      </div>
+      <div class="customer">
+        <div class="right">
+          <p>Bill to :</p>
+          <b>{{client.clientName}}</b>
+          <p>{{client.clientAddress}}</p>
+          <p>{{client.clientTown }}</p>
+          <p>{{client.clientpostalCode}}</p>
+        </div>
+        <div class="left" style="text-align: right;">
+          <b>Invoice Id:inv-{{client.id}}</b><br>
+          <h6>Date:{{client.date}}</h6>
+          <h6>Account number:1541048928</h6>
+          <b>Due Date:{{client.dueDate}}</b><br>
+
+        </div>
+      </div>
+      <div class="status">
+        <div class="dropdown">
+          <button class="dropbtn fa fa-bars" aria-hidden="true"></button>
+          <div class="dropdown-content">
+            <a href="copy/{{client.id}}"><i class="fa fa-copy"></i>&nbspCopy</a>
+            <hr>
+            <a href="edit/{{client.id}}"><i class="fa fa-edit"></i>&nbspEdit</a>
+            <hr>
+            <a href="delete/{{client.id}}"><i class="fa fa-delete"></i>&nbspDelete</a>
+            <hr>
+            <a href="email/{{client.id}}"><i class="fa fa-envelope" aria-hidden="true"></i>&nbspSend via email</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="action">
+      <a href="download/{{client.id}}" target="_blank">View Invoice</a>
+    </div>
+    {% endfor %}
+
+  </div>
+  <hr>
+
+  <div class="foot">
+
+
+    <h3>The smart Invoice</h3>
+    <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+        href="#">Contact us</a>|<a href="#">About Used</a></h6>
+    <h6>© 2022-2022 TR-invoice. All rights reserved. Version: 1.0.0</h6>
+    <br>
+
+  </div>
+
+</body>
+{% endblock %}

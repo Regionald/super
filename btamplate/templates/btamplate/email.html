@@ -1,0 +1,54 @@
+{% load static %}
+{% load bootstrap_icons %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>{% block title %}Business Case {% endblock %}</title>
+
+</head>
+<body>
+    <body>
+        <div class="header">
+            <a href="/btamplate/" class="nav-item nav-link active"> {% bs_icon 'arrow-left-short' color='black' size='1em'  %} Back</a>
+    </div>
+    <div class="responsive">
+    <div class="email">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <section class="row">
+        <table>
+            <tr>
+                <td class="schedule-offset" colspan="2">TO:</td>
+                <td><input type="email" name="toemail" required></td>
+
+            </tr>
+            <tr>
+                <td class="schedule-offset" colspan="2">Message:</td>
+                 <td><textarea name="content" readonly id="" cols="30" rows="10" required>@Solutions Busines Case Template</textarea></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" class="btn btn-outline-success rounded-pill></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</section>
+
+<footer class="footer-copy">
+    <div class="container-fluid">
+       <div class="row">
+   <div class="col-md-12">
+   <!-- <p> &copy; 2022 All rights reserved. @Solutions</a></p> -->
+    </div>
+  </div>
+    </div>
+    </footer>
+  </div>
+</body>
+</html>

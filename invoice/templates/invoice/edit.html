@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<body>
+  {% load static %}
+
+  {% for product in product %}
+
+  <hr>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card home">
+          <h3><b>Products and Services</b></h3>
+    
+          <label for="cars">Choose a category:</label>
+          <select class="custom-select" name="category" id="cars">
+            <option value="furniture">Furniture</option>
+            <option value="vehicles">Vehicles</option>
+            <option value="bakery">Bakey</option>
+          </select>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Brand</th>
+            </tr>
+    
+            <tr>
+              <td id="discript">
+                <input type="text" value="{{product.name}}" name="name" placeholder="Name">
+    
+              </td>
+              <td id="rate">
+                <input type="number" value="{{product.price}}" name="price" placeholder="Price" step="0.01">
+              </td>
+              <td id="qty">
+                <input type="text" value="{{product.brand}}" name="brand" placeholder="brand">
+              </td>
+            </tr>
+          </table>
+          <textarea name="qty"  placeholder="Description" id="" cols="90" rows="2">{{product.descript}}</textarea>
+           <br>
+          <button class="btn">Update Item</button>
+    
+      </form>
+      <br>
+      <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+      <input size="60" style="background-color: aqua;" type="file" accept="image/*" name="avater">
+      <br>
+          <button class="btn">Update image</button>
+      </form>
+    </div>
+  
+    
+</div>
+  <br>
+  <div class="invoices">
+
+  </div>
+  {% endfor %}
+
+  <div class="foot">
+
+    <h3>The smart Market</h3>
+    <h6><a href="#">Disclaimer</a>|<a href="#">Privacy policy</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+        href="#">Contact us</a>|<a href="#">About us</a></h6>
+    <h6>© 2022-2022 Market. All rights reserved. Version: 1.0.0</h6>
+    <br>
+
+  </div>
+</body>
+
+{% endblock %}

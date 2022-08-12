@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cleaning Services{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static '/css/mai.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}" />
+</head>
+<body>
+    {% block content %}
+    <div class="content" style="max-width:1400px;">   
+    <nav id="navbar" class="">
+        <div class="nav-wrapper">
+          <div class="logo">
+            <a href="/clean/"><i class="fa fa-shower"></i> {{content.companyName}} </a>
+          </div>
+          <ul id="menu">
+            <li><a href="/clean/">Home</a></li>
+           <li><a href="#services_section">Services</a></li>
+         <li><a href="#about_section">About</a></li>
+         <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="banner text-center" data-scroll-index='0'>
+        <div class="banner-overlay">
+          <div class="container">
+        </div>
+      </div>
+      </div>
+      <section id="about_section">
+      <div class="about-us section-padding" data-scroll-index='1'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+           
+              <span class="section-title-line"></span> </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-info">
+                <div class="sub-title-paragraph">
+                  <h4>About Us.</h4>
+                  <p>{{content.Heading}}.</p>
+                </div>
+               </div>
+            </div>
+            <div class="col-md-6 mb-50">
+              <div class="section-img">   {% if file_url %}
+                <img src="{{ file_url }}" class="img-fluid">
+                {% else %}
+                <p>No picture added.</p>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="services_section">
+      <div class="services section-padding bg-grey" data-scroll-index='2'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+              <h3>Services</h3>
+              <span class="section-title-line"></span> </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-building"></i> </div>
+                <div class="icon-text">
+                  <h4 class="title-box">Offices</h4>
+                  <p> {{content.content1}}.</p>
+            
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-home"></i></div>
+                <div class="icon-text">
+                  <h4 class="title-box">Homes</h4>
+                  <p> {{content.content2}}.</p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-30">
+              <div class="service-box bg-white text-center">
+                <div class="icon"> <i class="fa fa-bed"></i> </div>
+                  <h4 class="title-box">Guesthouses & Bnb's</h4>
+                  <p> {{content.content3}}.</p>
+                  
+                </div>
+              </div>
+            </div>
+     </div>
+     </div>
+     </section>
+     <section id="contact_section">
+     <div class="contact section-padding" data-scroll-index='4'>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 section-title text-center">
+              <h3>Contact Us For More</h3>
+              <span class="section-title-line"></span> </div>
+            <div class="col-lg-5 col-md-4">
+              <div class="part-info">
+                <div class="info-box">
+                  <div class="icon"></div>
+                  <div class="content">
+                    <h4>Contact Details:</h4>
+                    <h7><i class="fas fa-map-marker-alt"></i>{{content.adrs1}}</h7>
+                    <h7><i class="fas fa-map-marker-alt"></i>{{content.adrs2}}</h7>
+                    <h7><i class="fas fa-map-marker-alt"></i>{{content.adrs3}}</h7>
+                    <h7><i class="fas fa-phone"></i>{{content.cellno}}</h7>
+                 
+                    <p></p>
+                  </div>
+                </div>
+    </div>
+</section>
+     <footer class="footer-copy">
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col item social">
+                <a href="#"><i class="fab fa-facebook"> Facebook</i></a><br>
+                <a href="#"><i class="fab fa-twitter"> Twitter</i></a><br>
+                <a href="#"><i class="fab fa-youtube"> Youtube</i></a><br>
+                <a href="#"><i class="fab fa-instagram"> Instagram</i></a><br>++
+        </div>
+    <div class="col-md-12">
+    <p>2022 &copy;  Cleaning Services.</a></p>
+     </div>
+</div>
+     </div>
+     </footer>
+{% endblock %}
+</body>
+</html>
+
+
+

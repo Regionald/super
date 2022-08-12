@@ -1,0 +1,127 @@
+<body>
+    <div>
+        <div class="navigator">
+
+            <button class="btn homebtn">Home</button>
+            <button class="btn aboutbtn">About Us</button>
+            <button class="btn contactbtn">Contact Us</button>
+        </div>
+    </div>
+
+    <hr>
+    <div class="home">
+        <div class="card">
+            <h1 style="text-align: center;">{{content.heading}}</h1>
+            <br>
+            <div class="slideshow-container">
+                <div class="mySlide fade">
+                    {% if file_url %}
+                    <img src="{{ file_url }}" alt="tourism" style="width: 100%;height: 500px;">
+                    {% else %}
+                    <p>No picture added.</p>
+                    {% endif %}
+                </div>
+
+                <div class="mySlide fade">
+                    {% if uploaded_file_url %}
+                    <img src="{{ uploaded_file_url }}" alt="tourism" style="width: 100%;height: 500px;">
+                    {% else %}
+                    <p>No picture added.</p>
+                    {% endif %}
+                </div>
+
+
+                <div class="mySlide fade">
+                    {% if upload_file_url %}
+                    <img src="{{ upload_file_url }}" alt="tourism" style="width: 100%;height: 500px;">
+                    {% else %}
+                    <p>No picture added.</p>
+                    {% endif %}
+                </div>
+
+                <div class="mySlide fade">
+                    {% if uploade_file_url %}
+                    <img src="{{ uploade_file_url }}" alt="Tourism" style="width: 100%;height: 500px;">
+                    {% else %}
+                    <p>No picture added.</p>
+                    {% endif %}
+                </div>
+
+
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+                <span class="dots"> </span>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <p>Press the Dot to view more<p>click the black circle for more destinations</p>
+            <div class="slideshow-container">
+                <div class="mySlide3 fade">
+                    <h3 >{{content.header1}}</h3>
+                    <p style="width: 80%;margin: auto;">
+                        {{content.content1}}
+                  </p>
+                    
+                </div>
+
+
+
+                <div class="mySlide3 fade">
+                    <h3>{{content.header2}}</h3>
+                    <p style="width: 80%;margin: auto;">
+                        {{content.content2}}
+                    </p>
+                </div>
+
+
+                <div class="mySlide3 fade">
+                    <h3>{{content.header3}}</h3>
+                    <p style="width: 80%;margin: auto;">
+                        {{content.content3}}
+                    </p>
+                </div>
+
+                <a class="prev" onclick="plusSlide3(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlide3(1)">&#10095;</a>
+            </div>
+
+            <br>
+            <div style="text-align: center;">
+                <span class="dot3" onclick="currentSlide3(1)"> </span>
+                <span class="dot3" onclick="currentSlide3(2)"> </span>
+                <span class="dot3" onclick="currentSlide3(3)"> </span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card about">
+        <h1><b>about us</b></h1>
+        <br>
+        <p>Cli <br>
+            {{content.aboutUs}}
+        </p>
+    </div>
+    <br>
+    <div class="card contact">
+        <h3>contact Details</h3>
+        <h6>{{content.adrs1}}</h6>
+        <h6>{{content.adrs2}}</h6>
+        <h6>{{content.adrs3}}</h6>
+        <h6>{{content.celNo}}</h6>
+        <h6><b>{{content.email}}</b></h6>
+    </div>
+    <hr>
+
+    <div class="foot">
+        <h3>Your Dream Destination</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#"
+                id="contactFooter">Contact us</a>|<a href="#" id="aboutFooter">About Us</a></h6>
+        <h6>© 2022-2022 Your Dream Destination. All rights reserved. Version: 1.0.0</h6>
+        <br>
+    </div>
+</body>

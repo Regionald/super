@@ -1,0 +1,92 @@
+body{
+
+max-width: 100%;
+margin: auto;
+text-align: center;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+  color: #000000;
+  margin: 0.75%;
+}
+.navigator{
+    background-color:#00b4d8;
+    display: flex;
+}
+.btn {
+    font: inherit;
+    width: 23%;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #00b4d8;
+    color: white;
+    border: 1px solid #00b4d8;
+    padding:1.15%;
+  }
+  .btn:hover {
+    background-color: silver;
+    border-color: #00b4d8;
+  }
+  input{
+    width: 95%;
+    padding: 2%;
+    margin: 1%;
+    }
+    input:focus{
+        background-color:lightblue;
+    
+    }
+    
+
+hr{
+    background-color: red;
+  }
+  .card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  table{
+    width: 100%;
+    table-layout:fixed;
+  }
+  th{
+    background-color: #17c3b2;
+  }
+  .input{
+    margin-bottom: 0.2em;
+  }
+  .hide{
+    display: none;
+  }
+  a{
+    text-decoration: none;
+    padding: 0.2px;
+    margin:0.25%;
+  }
+  .foot{
+    display: none;
+  }
+  
+  @media (min-width:720px){
+    body{
+      width: 80%;
+      margin: auto;
+      background-color: whitesmoke;
+    }
+    .foot{
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin: auto;
+      bottom: 0px;
+      padding: 0.5%;
+      background-color: #caf0f8;
+    }
+    
+  }
+  

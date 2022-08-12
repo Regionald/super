@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<body>
+  {% load static %}
+
+  <hr>
+  <div class="card">
+    <h3><b>Products and Services</b></h3>
+  </div>
+  
+  {% for product in product %}
+   <div class="card home">
+    <hr>
+
+    <div class="featured-item">
+      <h4 class="productName">{{product.name}}</h4>
+
+      <img class="productImage"  src="{{product.avater.url}}" alt="Item 1">
+
+      <div class="productPrice">
+        <div class="productPriceText" style="font-size: black;" ><h6>R{{product.price}}</h6></div>
+      
+        <div class="productPriceBotton">
+
+          <button><a href="edit/{{product.id}}"><i class="fa fa-edit"></i>&nbsp Edit</a></button>
+          <button> <a href="delete/{{product.id}}"><i class="fa fa-delete"></i>&nbsp Delete</a></button>
+
+        </div>
+
+      </div>
+      <div class="productDescript">
+        <p>{{product.descript}}</p>
+      </div>
+    </div>
+  </div>
+   
+  {% endfor %}
+  
+</div>
+  <br>
+  <div class="invoices">
+
+  </div>
+
+
+  <div class="foot">
+
+    <h3>The smart Market</h3>
+    <h6><a href="#">Disclaimer</a>|<a href="#">Privacy policy</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+        href="#">Contact us</a>|<a href="#">About us</a></h6>
+    <h6>© 2022-2022 Market. All rights reserved. Version: 1.0.0</h6>
+    <br>
+
+  </div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends 'diy/base.html' %}
+{% block content %}
+
+<body>
+    {% load static %}
+    <div>
+        <div class="navigator">
+
+            <button class="btn homebtn">Home</button>
+            <button class="btn aboutbtn">About Us</button>
+            <button class="btn contactbtn">Contact Us</button>
+
+        </div>
+    </div>
+
+    <hr>
+    <div class="home">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+        <h1 style="text-align: center;">medicCenter</h1>
+       <input type="text" placeholder="Heading" class="input" name="heading" required>
+       <input type="text" placeholder="company name" class="input" name="companyName" required>
+
+        
+       <img src="{% static 'pic/cover.jpg' %}" alt="medic" width="100%">
+       <br>
+       
+       <input type="file" name="picture" accept="image/*">
+       <br>
+       
+   
+        <div class="card">
+            <p>
+                More than A Doctor
+            </p>
+     <input type="text" placeholder="sub-heading" class="input" name="subHead" required>
+
+            <p>
+                While we might call just about every medical professional we know a “doctor”, did you know that not all doctors are the same? Often, family physicians will refer a patient to a specialist 
+                – this is not because the doctor does not know what they are doing; it is simply ethical practice when faced with a highly specialised issue. Every medical professional who goes by the title of “Doctor” probably had the same initial medical training but some branched off into specific
+                 studies. Here we take a quick look at six of the most popular types of doctors and what they do:
+            </p>
+        <input type="text" placeholder="content" class="input" name="content1" required>
+            
+        </div>
+        <br>
+        <table>
+            <th> <p>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point
+                 of contact with a medical professional for a patient, as these are the 
+                physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+            </p> 
+            <th>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point of contact with a medical professional for a patient, as these are the
+                 physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+            <th>A general practitioner, or GP, is a doctor broadly trained in medicine. GPs are often the first point of contact with a medical professional for a patient, as these are the
+                 physicians with which one books an appointment when feeling ill or in need of a check-up.</th>
+            <tr>
+             <td>
+            <input type="text" placeholder="content" class="input" name="content2" required>
+             </td>
+             <td>
+                <input type="text" placeholder="content" class="input" name="content3" required>
+            </td>
+            <td>
+                <input type="text" placeholder="content" class="input" name="content4" required>
+            </td>
+
+            </tr>
+        </table>
+        
+    </div>
+       <div>
+        
+       </div>
+    <br>
+    <div class="card about">
+        <h1><b>about us</b></h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus aliquet urna vel felis
+            volutpat
+            pharetra. Vivamus volutpat eget elit nec pellentesque. Nam tristique tortor vitae lectus
+            volutpat,
+            sed pellentesque massa semper. Sed pellentesque leo massa, vitae fermentum ipsum semper
+            quis. Duis
+            nunc velit, eleifend eu sollicitudin ac, gravida quis ex. Aenean nec tristique diam, mattis
+            interdum
+            odio. Nam mattis mauris metus, ut tristique nunc sollicitudin in. Sed a orci eu ipsum
+            viverra dapibus.
+            Praesent id convallis leo. Mauris non porta nibh. Phasellus efficitur aliquet risus nec
+            feugiat.
+            <br>
+            Proin placerat, lorem id rhoncus dapibus, eros urna sagittis ipsum, egestas tristique sem
+            tortor nec mi.
+            Fusce at metus quis eros varius rhoncus. Aliquam vehicula semper sapien, vel varius nibh
+            fermentum nec.
+            In aliquam congue ipsum, at placerat turpis suscipit in. Aenean eget arcu ut nisl gravida
+            congue.
+            Pellentesque vel felis quis elit blandit convallis. Praesent ut tempus dolor. Donec eu dolor
+            in sapien
+            imperdiet accumsan in vel odio. Morbi nulla magna, elementum vitae urna sit amet, pulvinar
+            accumsan
+            magna. Etiam quis vulputate mi.
+            <br>
+            <div>
+                <input type="text" placeholder="about you" class="input" name="aboutUs" required>
+            </div>   
+    </div>
+    <br>
+    <div class="card contact">
+        <h3>contact Details</h3>
+        <h6>Cnr Kingsway & University Roads</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs1" required>
+        <h6>Auckland Park</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs2" required>
+        <h6>Johannesburg</h6>
+        <input type="text" placeholder="ADDRESS" class="input" name="adrs3" required>
+        <h6>Tel:011 559 4555</h6>
+        <input type="number" placeholder="ADDRESS" class="input" name="celNo" required>
+        <h4><b>Send email</b></h4>
+        <input type="email" placeholder="ADDRESS" class="input" name="email" required>
+        <input type="submit">
+    </form>
+    </div>
+    
+    <hr>
+
+    <div class="foot">
+        <h3>Medical Services</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#"
+                id="contactFooter">Contact us</a>|<a href="#" id="aboutFooter">About Us</a></h6>
+        <h6>© 2022-2022 Medical Services. All rights reserved. Version: 1.0.0</h6>
+        <br>
+    </div>
+    
+   </form>
+</body>
+{% endblock %}

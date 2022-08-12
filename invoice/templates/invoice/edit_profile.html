@@ -1,0 +1,47 @@
+{% extends 'loginlayout.html' %}
+
+{% block content %}
+<body>
+
+   <div class="navigator">
+   <button class="btn homedbtn">Edit profile</button>
+   </div>
+   <hr>
+   <br>
+   <div class="card signUpn">
+       <h1><b>Hello there!</b></h1>
+       <h6>please Edit your</h6>
+       <form action="/account/update/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+           <input type="email" value="{{user.email}}" placeholder="Email" class="input" name="email" required>
+           <input type="text" value="{{user.username}}" placeholder="username" class="input" name="email" required>
+           <input type="text" value="{{user.companyName}}" placeholder="Company Name" name="companyName" required>
+           <input type="text" value="{{user.companyAddress}}" placeholder="Company Address" name="companyAddress" required>
+           <input type="text" value="{{user.town}}" placeholder="Town/City" name="town" required>
+           <input type="number"  value="{{user.postalCode}}" placeholder="postal code" name="postalCode" required>
+           <input type="number" value="{{user.accountNumber}}" placeholder="account number" name="accountNumber" required><br>
+           <br>
+           <button type="submit" class="btn">update</button>
+           <br>  
+       </form>
+       <br>
+       <form action="/account/upload/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       <input size="60" style="background-color: aqua;" type="file" accept="image/*" name="logoName">
+       <br>
+       <button type="submit" class="btn">upload</button>
+       <br>  
+   </form>
+   <br>
+   <a href="{{request.META.HTTP_REFERER}}">Back</a>
+    </div>
+     <hr>
+     <div class="foot">
+       <h3>The smart Invoice</h3>
+       <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">News</a>|<a href="#" id="contactFooter">Contact us</a>|<a
+               href="#" id="aboutFooter">About Us</a></h6>
+       <h6>© 2022-2022 TR-invoice. All rights reserved. Version: 1.0.0</h6>
+       <br>
+   </div>
+</body>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'main.html' %}
+{% block content %}
+<body>
+
+    <hr>
+
+    <br>
+    <div class="invoices">
+
+        {% for client in client %}
+          
+
+        <div class="invoice" id="{{client.id}}">
+
+            <div class="box">
+                <div class="right">
+                    <b>{{user.companyName}}</b>
+                    <p>{{user.companyAddress}}</p>
+                    <p>{{user.town}}</p>
+                    <p>{{user.postalCode}}</p>
+                </div>
+                <div class="left">
+                    <b>Invoice</b><br>
+                    <br>
+                    {% load static %}
+                    <img src="" alt="pic" class="picture">
+                </div>
+            </div>
+            <hr>
+
+            <div class="box">
+                <div class="right">
+                    <p>bill to :</p>
+                    <b>{{client.clientName}}</b>
+                    <p>{{client.clientAddress}}</p>
+                    <p>{{client.clientTown }}</p>
+                    <p>{{client.clientpostalCode}}</p>
+                </div>
+                <div class="left" style="text-align: right;">
+                    <b>Invoice Id:inv-{{client.id}}</b><br>
+                    <h6>Date:{{client.date}}</h6>
+                    <h6>Account number:1541048928</h6>
+                    <b>Due Date:{{client.dueDate}}</b><br>
+
+                </div>
+            </div>
+            <hr>
+            <div class="boxx">
+            <form action="" method="post">
+                {% csrf_token %}
+                <input type="date" value="{{client.dueDate}}" placeholder="{{client.dueDate}}" name="dueDate">
+                <button type="submit" class="btn"><i class="fa fa-upload" aria-hidden="true"></i>&nbsp update</button> <a class="back" href="{{request.META.HTTP_REFERER}}">back</a>
+            </form>
+            </div>
+            <hr>
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>DESCRIPTION</th>
+                        <th>RATE</th>
+                        <th>QTY</th>
+                        <th>AMOUNT</th>
+                    </tr>
+                    {% for product in client.products  %}
+                    <tr>
+                        <td>{{product.descpript}}</th>
+                        <td>R{{product.rate}}</th>
+                        <td>{{product.qty}}</th>
+                        <td>R{{product.amount}}</th>
+                    </tr>
+                    {% endfor  %}
+
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>sub total</th>
+                        <td>R{{client.subTotal}}</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>vat @ 15%</th>
+                        <td>R{{client.vat}}</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            </th>
+                        <td>
+                            </th>
+                        <td>TOTAL</th>
+                        <td>R{{client.Total}}</th>
+                    </tr>
+                </table>
+            </div>
+            <hr>
+            <div class="box">
+                <div class="contact">
+                    <b>Thank you for your Business</b>
+                    <h6>{{user.cellNo}}|{{user.email}}|{{user.companyName}}</h6>
+                    <a href="#">invoice powered by TR-invoice</a>
+                </div>
+            </div>
+        </div>
+       {% endfor %}
+
+    </div>
+    <hr>
+
+    <div class="foot">
+
+
+        <h3>The smart Invoice</h3>
+        <h6><a href="#">Disclaimer</a>|<a href="#">Privacy police</a>|<a href="#">Reports</a>|<a href="#">News</a>|<a
+                href="#">Contact us</a>|<a href="#">About Us</a></h6>
+        <h6>© 2022-2022 TR-invoice. All rights reserved. Version: 1.0.0</h6>
+        <br>
+
+    </div>
+   
+</body>
+ {% endblock %}
